@@ -2,7 +2,7 @@
 function connexion(){
 	try
 		{
-			$Connect=new PDO ('mysql:host=localhost;dbname=goorgorlu','root','s');
+			$Connect=new PDO ('mysql:host=localhost;dbname=goorgorlu','root','');
 		}
 		catch(Exception $e)
 		{
