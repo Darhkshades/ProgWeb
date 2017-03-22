@@ -7,9 +7,12 @@
 
 		$info_presta=$connexion->prepare("INSERT INTO prestataire values(NULL,?,?,?,?)");
 		$info_presta->execute(array($nom,$prenom,$tel,$adresse));
-	
-		$compte_presta=$connexion->prepare("INSERT INTO compteprestataire values(NULL,?,?)");
-		$compte_presta->execute(array($pseudo,$motdepasse));
+		$id_presta=$connexion->lastInsertId();
 
+		$compte_presta=$connexion->prepare("INSERT INTO compteprestataire values(NULL,$id_presta,?,?)");
+		$compte_presta->execute(array($pseudo,$motdepasse));
 	}
+
+
+	
 		?>
