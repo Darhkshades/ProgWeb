@@ -11,6 +11,8 @@
 
 		$compte_presta=$connexion->prepare("INSERT INTO compteprestataire values(NULL,$id_presta,?,?)");
 		$compte_presta->execute(array($pseudo,$motdepasse));
+
+		return $id_presta;
 	}
 
 
